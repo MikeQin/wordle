@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Dictionary from '../data/dictionary';
 
 const useWordle = (solution) => {
 
@@ -8,6 +9,7 @@ const useWordle = (solution) => {
   const [history, setHistory] = useState([]) // each guess is a string
   const [isCorrect, setIsCorrect] = useState(false)
   const [usedKeys, setUsedKeys] = useState({}) // {a: 'green', b: 'yellow', c: 'gray'}
+  const [correctWord, setCorrectWord] = useState(true);
 
   // format a guess into an array of letter objects
   // [{key:'a', color:'yellow'}]
@@ -43,6 +45,13 @@ const useWordle = (solution) => {
    
     if (currentGuess === solution) {
       setIsCorrect(true);
+    }
+   
+    const found = Dictionary.indexOf(currentGuess);
+    if (found === -1) {
+      setCorrectWord(false);
+      console.log("[" + currentGuess + "] is not a correct English word.");
+      return
     }
 
     setGuesses((prev) => {
@@ -137,7 +146,7 @@ const useWordle = (solution) => {
     }
   };
 
-  return { turn, currentGuess, guesses, isCorrect, usedKeys, handleKeyupOrClick };
+  return { turn, currentGuess, guesses, isCorrect, usedKeys, handleKeyupOrClick, correctWord, setCorrectWord };
 }
  
 export default useWordle;

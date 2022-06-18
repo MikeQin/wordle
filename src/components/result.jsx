@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Modal({ isCorrect, turn, solution }) {
+export default function Result({ isCorrect, turn, solution }) {
 
   const handleOKButton = (event) => {
     window.location.reload();
@@ -14,7 +14,7 @@ export default function Modal({ isCorrect, turn, solution }) {
           <p className='solution'>{solution}</p>
           <p>Great! You found the solution in {turn} guesses :)</p>
           <br/>
-          <button type="button" onClick={handleOKButton}>OK</button>
+          <button type="button" className='button' onClick={handleOKButton}>OK</button>
         </div>
       )}
       {!isCorrect && (
@@ -23,7 +23,7 @@ export default function Modal({ isCorrect, turn, solution }) {
           <p><span className='solution'>{solution}</span></p>
           <p>You guessed {turn} times. Better luck next time :)</p>
           <br/>
-          <button type="button" onClick={handleOKButton}>OK</button>
+          <button type="button" className='button' onClick={handleOKButton}>OK</button>
         </div>
       )}
     </div>
