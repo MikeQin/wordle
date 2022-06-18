@@ -1,19 +1,27 @@
-# My Wordle (Lingo) Game - A React App Game
+# Wordle Game - A React App
 
-### Install Packages
+#### Live Demo
+Deployment: https://wordle-nsxfq8tpw-mikeqin.vercel.app
+
+### Create and Start React App
 ```
 npx create-react-app wordle
+npm start
+```
 
+### Install Optional json-server
+```
+# Installing json-server is optional and the current 
+# implementation uses local WordBank (src/data/words.js) 
+# which is the same as the one from original Wordle
 npm install -g json-server
 
 # Start Json Server
-json-server ./data/db.json --port 3001
+json-server ./src/data/db.json --port 3001
 # http://localhost:3001/solutions
-
 ```
 
 #### Shortcut Key
-
 ```
 rfc - react functional component
 
@@ -26,7 +34,7 @@ export default function wordle() {
 }
 ```
 
-### Game Instructions
+### Game Dev Instructions
 ```
 data we need to track:
   -- solution
