@@ -3,13 +3,13 @@ import Dictionary from '../data/dictionary';
 
 const useWordle = (solution) => {
 
-  const [turn, setTurn] = useState(0) 
-  const [currentGuess, setCurrentGuess] = useState('')
-  const [guesses, setGuesses] = useState([...Array(6)]) // each guess is an array, 6 rows
-  const [history, setHistory] = useState([]) // each guess is a string
-  const [isCorrect, setIsCorrect] = useState(false)
-  const [usedKeys, setUsedKeys] = useState({}) // {a: 'green', b: 'yellow', c: 'gray'}
-  const [correctWord, setCorrectWord] = useState(true);
+  const [turn, setTurn] = useState(0) // 0 
+  const [currentGuess, setCurrentGuess] = useState('') // ''
+  const [guesses, setGuesses] = useState([...Array(6)]) // [...Array(6)], each guess is an array, 6 rows
+  const [history, setHistory] = useState([]) // [], each guess is a string
+  const [isCorrect, setIsCorrect] = useState(false) // false,
+  const [usedKeys, setUsedKeys] = useState({}) // {}, {a: 'green', b: 'yellow', c: 'gray'}
+  const [correctWord, setCorrectWord] = useState(true); // true, 
 
   // format a guess into an array of letter objects
   // [{key:'a', color:'yellow'}]
@@ -107,7 +107,7 @@ const useWordle = (solution) => {
       key = event.target.innerText;
     }
 
-    console.log("key:", key);
+    //console.log("key:", key);
     
     //const { key } = event;
     if (key === 'Enter') {
@@ -146,7 +146,8 @@ const useWordle = (solution) => {
     }
   };
 
-  return { turn, currentGuess, guesses, isCorrect, usedKeys, handleKeyupOrClick, correctWord, setCorrectWord };
-}
+  return { turn, currentGuess, guesses, isCorrect, usedKeys, 
+    handleKeyupOrClick, correctWord, setCorrectWord };
+};
  
 export default useWordle;

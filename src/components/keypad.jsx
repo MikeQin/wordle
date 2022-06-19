@@ -77,9 +77,7 @@ export default function Keypad( { usedKeys, handleKeyupOrClick }) {
     <div id='Enter' style={wideStyle} onClick={handleKeyupOrClick}>Enter</div>
   </div>
   <br/>
-  <div className='msg'>{isMobile ? 'Mobile Client' : 'Browser Client'}</div>
-  <br/>
-  <div className='msg'>{'Copyright '} &copy; {' 2022 Michael'}</div>
+  <div className='msg'>{isMobile ? 'Mobile Client' : 'Browser Client. '} {'Copyright '} &copy; {' 2022 Mike'}</div>
   </>
   )
 }
