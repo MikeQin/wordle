@@ -7,6 +7,9 @@ Deployment: https://wordle-nsxfq8tpw-mikeqin.vercel.app
 ```
 npx create-react-app wordle
 npm start
+
+# Add device detect, which does not work in React, but works for Next.js
+npm install react-device-detect
 ```
 
 ### Install Optional json-server

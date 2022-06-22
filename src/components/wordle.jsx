@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import useWordle from '../hooks/useWordle'
-import Grid from './grid';
-import HowTo from './howTo';
-import Keypad from './keypad';
-import Message from './message';
-import Result from './result';
+import Grid from './Grid';
+import HowTo from './HowTo';
+import Keypad from './Keypad';
+import Message from './Message';
+import Result from './Result';
 
 export default function Wordle({ solution }) {
 
@@ -34,7 +34,8 @@ export default function Wordle({ solution }) {
   //   console.log("cheat: " + solution);
   // }, [solution]);
 
-  const handleHowToPlay = () => {
+  const handleHowToPlay = (e) => {
+    e.preventDefault();
     setShowHowTo(true);
   };
 
@@ -43,9 +44,9 @@ export default function Wordle({ solution }) {
     {/* debugging: <div>Solution - {solution}</div>
     <div>Current Guess - { currentGuess }</div> */}
     <Grid currentGuess={currentGuess} guesses={guesses} turn={turn} />
-    <Keypad usedKeys={usedKeys} handleKeyupOrClick={handleKeyupOrClick}/>
+    <Keypad usedKeys={usedKeys} handleKeyupOrClick={handleKeyupOrClick} />
     <br/>
-    <button type="button" onClick={handleHowToPlay}>How to play?</button>
+    <a href='/' onClick={handleHowToPlay}>How to play?</a>
     {showResult && <Result isCorrect={isCorrect} turn={turn} solution={solution} />}
     {!correctWord && <Message currentGuess={currentGuess} setCorrectWord={setCorrectWord}/>}
     {showHowTo && <HowTo setShowHowTo={setShowHowTo} solution={solution}/>}

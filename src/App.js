@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import Wordle from './components/wordle';
+import Wordle from './components/Wordle';
 import WordBank from './data/words';
 
 function App() {

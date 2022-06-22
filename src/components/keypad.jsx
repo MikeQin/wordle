@@ -27,6 +27,7 @@ export default function Keypad( { usedKeys, handleKeyupOrClick }) {
   }, [setWidth]);
   const isMobile = width <= 768;
   /* END: Detect Mobile or Browser client */
+  //console.log("isMobile:", isMobile);
 
   useEffect(() => {
     setLetters(Keys);
@@ -77,7 +78,7 @@ export default function Keypad( { usedKeys, handleKeyupOrClick }) {
     <div id='Enter' style={wideStyle} onClick={handleKeyupOrClick}>Enter</div>
   </div>
   <br/>
-  <div className='msg'>{isMobile ? 'Mobile Client' : 'Browser Client. '} {'Copyright '} &copy; {' 2022 Mike'}</div>
+  <div className='msg'>{isMobile ? 'Mobile Client. ' : 'Browser Client. '} {'Copyright '} &copy; {' 2022 TechSoft'}</div>
   </>
   )
 }
