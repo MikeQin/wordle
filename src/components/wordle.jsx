@@ -28,7 +28,7 @@ export default function Wordle({ solution }) {
 
     return () => window.removeEventListener("keyup", handleKeyupOrClick);
 
-  }, [handleKeyupOrClick, isCorrect, turn, setShowResult]);
+  }, [handleKeyupOrClick, isCorrect, turn]);
 
   // useEffect(() => {
   //   console.log("cheat: " + solution);

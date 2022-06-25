@@ -24,7 +24,7 @@ export default function Keypad( { usedKeys, handleKeyupOrClick }) {
     return () => {
         window.removeEventListener('resize', handleWindowSizeChange);
     }
-  }, [setWidth]);
+  }, []);
   const isMobile = width <= 768;
   /* END: Detect Mobile or Browser client */
   //console.log("isMobile:", isMobile);
